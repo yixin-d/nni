@@ -494,7 +494,7 @@ def create_module_wrapper(model: nn.Module, module: nn.Module, module_name: str,
             raise ValueError(f'Using two fused_modules_pair for {module_name} is not supported')
         wrapper.unfreeze()
         target_spaces = wrapper.extend_target_spaces(config, mode)
-        wrapper.config = update_config(wrapper.config, {mode: config})
+        # wrapper.config = update_config(wrapper.config, {mode: config})
         if len(fused_modules_pair) > 0:
             wrapper.fused_modules = fused_modules
     else:
